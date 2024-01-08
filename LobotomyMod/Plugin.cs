@@ -43,11 +43,6 @@ namespace LobotomyMod
 
         void Update()
         {
-            if (!playerController.criticallyInjured && !lobotomyControllerStarted)
-            {
-                playerController.DamagePlayer(5, true, true);
-            }
-
             if (!isUiReady)
             {
                 if(GameNetworkManager.Instance == null)
@@ -181,7 +176,7 @@ namespace LobotomyMod
                 return;
             }
 
-            if (Random.Range(0f, 100f) < 20f) //TODO: Add configurable and/or scalable attack chances for lower hp values
+            if (Random.Range(0f, 100f) < 5f) //TODO: Add configurable and/or scalable attack chances for lower hp values
             {
                 StartCoroutine(recordFrame((texture) =>
                 {
